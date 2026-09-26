@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f7f6f1">
+<title>Mental Health Score Predictor — Aakash Gupta | AI/ML Engineer</title>
+<meta name="description" content="A scikit-learn mental health score regression model served through FastAPI, taking social media usage, sleep, study hours and stress as inputs.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="project.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="site-nav profile-container">
+    <a href="index.html" class="brand"><span class="brand-mark"><img src="assets/photo-passport.jpg" alt=""></span>Aakash Gupta</a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="work.html" class="nav-active">Work</a></li>
+      <li><a href="index.html#toolkit">Toolkit</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a class="book" href="mailto:aakashsahuu0188@gmail.com" target="_blank" rel="noopener">Let's talk <span class="arrow">↗</span></a>
+    </div>
+      <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
+      <span class="nav-toggle-bars" aria-hidden="true"><span></span><span></span><span></span></span>
+    </button>
+</nav>
+
+</header>
+
+<main class="profile-page">
+
+  <section class="project-hero grad-4">
+    <div class="profile-container hero-inner">
+      <span class="hero-label">Machine Learning</span>
+      <h1>Mental Health Score Predictor</h1>
+      <p class="hero-summary">A scikit-learn regression model that scores a student's mental health from social media usage, sleep and stress — served behind a validated FastAPI endpoint.</p>
+      <div class="hero-meta">
+        <span class="badge built"><span class="pulse"></span>Built</span>
+      </div>
+      <div class="video-tags hero-tags">
+        <span class="video-tag">Scikit-learn</span>
+        <span class="video-tag">FastAPI</span>
+        <span class="video-tag">Pandas</span>
+        <span class="video-tag">Pydantic</span>
+      </div>
+      <div class="hero-actions">
+        <a class="hero-btn primary" href="https://mental-health-score-1-jswj.onrender.com/" target="_blank" rel="noopener">Open live demo <span class="arrow">↗</span></a>
+        <a class="hero-btn ghost" href="https://github.com/theaakashgupta/mental-health-score" target="_blank" rel="noopener">View source <span class="arrow">↗</span></a>
+      </div>
+    </div>
+  </section>
+
+  <div class="profile-container">
+    <a class="back-link" href="work.html">← All work</a>
+
+    <div class="proj-layout">
+      <aside class="proj-side">
+        <section>
+          <p class="side-label">At a glance</p>
+          <div class="fact-list">
+            <div class="fact"><span class="fact-k">Status</span><span class="fact-v">Built</span></div>
+            <div class="fact"><span class="fact-k">Also known as</span><span class="fact-v">Regression over the Student Social Media and Mental Health dataset</span></div>
+          </div>
+        </section>
+        <section>
+          <p class="side-label">Stack</p>
+          <ul class="side-stack">
+            <li>Scikit-learn</li>
+            <li>FastAPI</li>
+            <li>Pandas</li>
+            <li>Pydantic</li>
+          </ul>        </section>
+        <section>
+          <p class="side-label">Links</p>
+          <div class="side-links">
+            <a class="action-link" href="https://mental-health-score-1-jswj.onrender.com/" target="_blank" rel="noopener">Open live demo ↗</a>
+            <a class="action-link" href="https://github.com/theaakashgupta/mental-health-score" target="_blank" rel="noopener">Source code ↗</a>
+          </div>
+        </section>
+      </aside>
+
+      <div class="proj-body">
+                    <section class="proj-section">
+          <h2 class="proj-h2">Overview</h2>
+          <p>Social media use and student wellbeing are usually discussed in qualitative terms. This project turns the relationship into a number: given a student's daily habits, the model returns a mental health score.</p>
+          <p>It is a regression problem, not a classification one — the target is a continuous score rather than a yes/no label. The trained model is serialised with joblib and served behind a FastAPI endpoint with strict input validation.</p>
+          </section>
+
+          <section class="proj-section">
+          <h2 class="proj-h2">How it works</h2>
+          <ol class="flow">
+          <li class="flow-step">
+            <span class="flow-idx">01</span>
+            <div class="flow-body"><strong>Validate</strong><p>Incoming data is checked by a Pydantic model — numeric ranges are enforced and categorical fields are restricted to known values.</p></div>
+          </li>
+          <li class="flow-step">
+            <span class="flow-idx">02</span>
+            <div class="flow-body"><strong>Assemble</strong><p>The twelve validated fields are assembled into a single-row Pandas DataFrame with the exact column names the model was trained on.</p></div>
+          </li>
+          <li class="flow-step">
+            <span class="flow-idx">03</span>
+            <div class="flow-body"><strong>Group country</strong><p>Countries outside the top-ten seen in training are folded into a single “Other” group so unseen values cannot skew the prediction.</p></div>
+          </li>
+          <li class="flow-step">
+            <span class="flow-idx">04</span>
+            <div class="flow-body"><strong>Predict</strong><p>The serialised scikit-learn pipeline runs on the row and returns a score, rounded to two decimal places.</p></div>
+          </li>
+          </ol>
+          </section>
+
+          <section class="proj-section">
+          <h2 class="proj-h2">Inputs</h2>
+          <ul class="bullets">
+          <li><strong>Demographics</strong> — age, gender, country and academic level.</li>
+          <li><strong>Platform use</strong> — most-used platform, purpose of use, average daily usage hours and daily unlocks.</li>
+          <li><strong>Routine</strong> — study hours, physical activity hours and sleep hours per night.</li>
+          <li><strong>Stress</strong> — self-reported stress level.</li>
+          </ul>
+          <p>Twelve features in total, each range-checked at the API boundary — age between 10 and 100, usage and sleep between 0 and 24 hours — so a malformed request is rejected before it can reach the model.</p>
+          </section>
+
+          <section class="proj-section">
+          <h2 class="proj-h2">The API</h2>
+          <ul class="bullets">
+          <li><strong>POST /predict</strong> — accepts a validated student profile and returns the score.</li>
+          <li><strong>Typed request and response models</strong> — Pydantic models document the contract and enforce it at runtime.</li>
+          <li><strong>Categorical enums</strong> — gender, academic level, platform, purpose and stress level are restricted to the values the model knows.</li>
+          <li><strong>JSON responses</strong> — plain JSON, so the model is usable from any client or language.</li>
+          </ul>
+          </section>
+
+          <section class="proj-section">
+          <h2 class="proj-h2">Tech stack</h2>
+          <ul class="bullets">
+          <li><strong>Scikit-learn</strong> — the regression model and training pipeline.</li>
+          <li><strong>Joblib</strong> — serialises the trained model to disk for loading at startup.</li>
+          <li><strong>Pandas</strong> — builds the feature row the model expects.</li>
+          <li><strong>FastAPI + Pydantic</strong> — validated request handling and the HTTP API.</li>
+          <li><strong>Render</strong> — the deployment the live demo runs on.</li>
+          </ul>
+          </section>
+      </div>
+    </div>
+
+    <nav class="proj-pager" aria-label="Project navigation">
+        <a class="pager-link" href="work-movie-recommendation.html">
+          <span class="pager-dir">Previous project</span>
+          <span class="pager-title">Movie Recommendation System</span>
+        </a>
+        <a class="pager-link next" href="work-code-review.html">
+          <span class="pager-dir">Next project</span>
+          <span class="pager-title">Code Review Agent</span>
+        </a>
+    </nav>
+  </div>
+
+</main>
+
+<footer class="profile-footer">
+  <div class="profile-container footer-inner">
+    <p>© 2026 Aakash Gupta. <span>Built with AI systems, product taste, and coffee.</span></p>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="work.html">Work</a>
+      <a href="index.html#toolkit">Toolkit</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js" defer></script>
+</body>
+</html>

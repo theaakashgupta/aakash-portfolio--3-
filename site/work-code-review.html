@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f7f6f1">
+<title>Code Review Agent — Aakash Gupta | AI/ML Engineer</title>
+<meta name="description" content="A LangGraph multi-node code review agent: analyzer, issue finder and report generator backed by Mistral, served through FastAPI with a Next.js frontend.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="project.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="site-nav profile-container">
+    <a href="index.html" class="brand"><span class="brand-mark"><img src="assets/photo-passport.jpg" alt=""></span>Aakash Gupta</a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="work.html" class="nav-active">Work</a></li>
+      <li><a href="index.html#toolkit">Toolkit</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a class="book" href="mailto:aakashsahuu0188@gmail.com" target="_blank" rel="noopener">Let's talk <span class="arrow">↗</span></a>
+    </div>
+      <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
+      <span class="nav-toggle-bars" aria-hidden="true"><span></span><span></span><span></span></span>
+    </button>
+</nav>
+
+</header>
+
+<main class="profile-page">
+
+  <section class="project-hero grad-5">
+    <div class="profile-container hero-inner">
+      <span class="hero-label">AI Agent</span>
+      <h1>Code Review Agent</h1>
+      <p class="hero-summary">A LangGraph agent that reads a code snippet and returns a structured review — an analysis, a list of concrete issues, and a written report.</p>
+      <div class="hero-meta">
+        <span class="badge progress"><span class="pulse"></span>In progress</span>
+      </div>
+      <div class="video-tags hero-tags">
+        <span class="video-tag">LangGraph</span>
+        <span class="video-tag">FastAPI</span>
+        <span class="video-tag">Mistral</span>
+        <span class="video-tag">Next.js</span>
+      </div>
+      <div class="hero-actions">
+        <span class="hero-btn ghost" aria-disabled="true">Repo &amp; demo link coming soon</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="profile-container">
+    <a class="back-link" href="work.html">← All work</a>
+
+    <div class="proj-layout">
+      <aside class="proj-side">
+        <section>
+          <p class="side-label">At a glance</p>
+          <div class="fact-list">
+            <div class="fact"><span class="fact-k">Status</span><span class="fact-v">In progress</span></div>
+            <div class="fact"><span class="fact-k">Also known as</span><span class="fact-v">Three-node LangGraph workflow with a typed shared state</span></div>
+          </div>
+        </section>
+        <section>
+          <p class="side-label">Stack</p>
+          <ul class="side-stack">
+            <li>LangGraph</li>
+            <li>FastAPI</li>
+            <li>Mistral</li>
+            <li>Next.js</li>
+          </ul>        </section>
+        <section>
+          <p class="side-label">Links</p>
+          <div class="side-links">
+            <span class="proj-pending" style="font-style:italic;font-size:12.5px;">Link coming soon</span>
+          </div>
+        </section>
+      </aside>
+
+      <div class="proj-body">
+                    <section class="proj-section">
+          <h2 class="proj-h2">Overview</h2>
+          <p>A code review agent that takes a snippet and returns the three things a review actually needs: an understanding of what the code does, a list of specific problems, and a written recommendation.</p>
+          <p>The work is split across three LangGraph nodes rather than one long prompt. Each node has a single job and passes a typed state to the next, which keeps every step inspectable and easy to change on its own.</p>
+          </section>
+
+          <section class="proj-section">
+          <h2 class="proj-h2">How it works</h2>
+          <ol class="flow">
+          <li class="flow-step">
+            <span class="flow-idx">01</span>
+            <div class="flow-body"><strong>analyzer</strong><p>Reads the code and produces a brief analysis of its purpose, structure and concerns.</p></div>
+          </li>
+          <li class="flow-step">
+            <span class="flow-idx">02</span>
+            <div class="flow-body"><strong>issue_finder</strong><p>Works from that analysis to list three to five specific issues, each on its own line.</p></div>
+          </li>
+          <li class="flow-step">
+            <span class="flow-idx">03</span>
+            <div class="flow-body"><strong>report_generator</strong><p>Combines the analysis and the issue list into a formatted report with Summary, Issues and Recommendation sections.</p></div>
+          </li>
+          </ol>
+          <p>The graph is compiled once at startup and invoked per request, so the compiled workflow is reused across calls rather than rebuilt each time.</p>
+          </section>
+
+          <section class="proj-section">
+          <h2 class="proj-h2">The state</h2>
+          <ul class="bullets">
+          <li>A single <strong>CodeReviewState</strong> TypedDict carries <strong>code</strong>, <strong>initial_analysis</strong>, <strong>issues</strong> and <strong>final_report</strong> between nodes.</li>
+          <li>Nodes return partial dictionaries, so each one only declares the fields it changes.</li>
+          <li>The graph is <strong>linear</strong> — analyzer → issue_finder → report_generator → end — which keeps behaviour predictable.</li>
+          </ul>
+          </section>
+
+          <section class="proj-section">
+          <h2 class="proj-h2">Models, API and frontend</h2>
+          <ul class="bullets">
+          <li><strong>Mistral</strong> — <code>mistral-small-latest</code> via LangChain, run at temperature 0 for consistent, repeatable reviews.</li>
+          <li><strong>FastAPI</strong> — a single <code>POST /review</code> endpoint that seeds the state, invokes the graph and returns analysis, issues and report together.</li>
+          <li><strong>Next.js 16 + React 19 + Tailwind 4</strong> — the frontend that sends code and renders the review.</li>
+          <li><strong>CORS locked to localhost:3000</strong> — the API only accepts requests from the dev frontend origin.</li>
+          </ul>
+          </section>
+
+          <section class="proj-section">
+          <h2 class="proj-h2">Status</h2>
+          <p>This build is still in progress. The agent, API and frontend are working locally, and the repository and a hosted demo are still to come.</p>
+          </section>
+      </div>
+    </div>
+
+    <nav class="proj-pager" aria-label="Project navigation">
+        <a class="pager-link" href="work-mental-health.html">
+          <span class="pager-dir">Previous project</span>
+          <span class="pager-title">Mental Health Score Predictor</span>
+        </a>
+        <a class="pager-link next" href="work-heart-disease.html">
+          <span class="pager-dir">Next project</span>
+          <span class="pager-title">Heart Disease Prediction</span>
+        </a>
+    </nav>
+  </div>
+
+</main>
+
+<footer class="profile-footer">
+  <div class="profile-container footer-inner">
+    <p>© 2026 Aakash Gupta. <span>Built with AI systems, product taste, and coffee.</span></p>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="work.html">Work</a>
+      <a href="index.html#toolkit">Toolkit</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js" defer></script>
+</body>
+</html>

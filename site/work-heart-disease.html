@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f7f6f1">
+<title>Heart Disease Prediction — Aakash Gupta | AI/ML Engineer</title>
+<meta name="description" content="A heart disease risk classification model covering data cleaning, feature selection and model evaluation on medical datasets.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="project.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="site-nav profile-container">
+    <a href="index.html" class="brand"><span class="brand-mark"><img src="assets/photo-passport.jpg" alt=""></span>Aakash Gupta</a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="work.html" class="nav-active">Work</a></li>
+      <li><a href="index.html#toolkit">Toolkit</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a class="book" href="mailto:aakashsahuu0188@gmail.com" target="_blank" rel="noopener">Let's talk <span class="arrow">↗</span></a>
+    </div>
+      <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
+      <span class="nav-toggle-bars" aria-hidden="true"><span></span><span></span><span></span></span>
+    </button>
+</nav>
+
+</header>
+
+<main class="profile-page">
+
+  <section class="project-hero grad-6">
+    <div class="profile-container hero-inner">
+      <span class="hero-label">Machine Learning</span>
+      <h1>Heart Disease Prediction</h1>
+      <p class="hero-summary">A classification model that predicts heart disease risk from patient health metrics — built to support earlier screening.</p>
+      <div class="hero-meta">
+        <span class="badge progress"><span class="pulse"></span>In progress</span>
+      </div>
+      <div class="video-tags hero-tags">
+        <span class="video-tag">Classification</span>
+        <span class="video-tag">Healthcare</span>
+        <span class="video-tag">Scikit-learn</span>
+      </div>
+      <div class="hero-actions">
+        <span class="hero-btn ghost" aria-disabled="true">Repo &amp; demo link coming soon</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="profile-container">
+    <a class="back-link" href="work.html">← All work</a>
+
+    <div class="proj-layout">
+      <aside class="proj-side">
+        <section>
+          <p class="side-label">At a glance</p>
+          <div class="fact-list">
+            <div class="fact"><span class="fact-k">Status</span><span class="fact-v">In progress</span></div>
+            <div class="fact"><span class="fact-k">Also known as</span><span class="fact-v">Binary classification on medical data</span></div>
+          </div>
+        </section>
+        <section>
+          <p class="side-label">Stack</p>
+          <ul class="side-stack">
+            <li>Classification</li>
+            <li>Healthcare</li>
+            <li>Scikit-learn</li>
+          </ul>        </section>
+        <section>
+          <p class="side-label">Links</p>
+          <div class="side-links">
+            <span class="proj-pending" style="font-style:italic;font-size:12.5px;">Link coming soon</span>
+          </div>
+        </section>
+      </aside>
+
+      <div class="proj-body">
+                    <section class="proj-section">
+          <h2 class="proj-h2">Overview</h2>
+          <p>Cardiovascular risk is often identified late, because the signals that precede it sit scattered across routine health measurements. A classification model gives those measurements a single readable output: predicted risk, yes or no.</p>
+          <p>This project builds that model end to end, treating the data work as the main problem rather than an afterthought — on medical datasets, what you clean and which features you keep decides the result.</p>
+          </section>
+
+          <section class="proj-section">
+          <h2 class="proj-h2">The problem</h2>
+          <ul class="bullets">
+          <li><strong>Scattered signals</strong> — risk factors are spread across several measurements that nobody reviews together.</li>
+          <li><strong>Late detection</strong> — by the time symptoms are clear, the opportunity for early intervention has passed.</li>
+          <li><strong>Noisy medical data</strong> — missing values, duplicates and inconsistent records have to be handled before training.</li>
+          </ul>
+          </section>
+
+          <section class="proj-section">
+          <h2 class="proj-h2">Approach</h2>
+          <ol class="flow">
+          <li class="flow-step">
+            <span class="flow-idx">01</span>
+            <div class="flow-body"><strong>Clean</strong><p>Handle missing values, remove duplicates and normalise inconsistent records in the dataset.</p></div>
+          </li>
+          <li class="flow-step">
+            <span class="flow-idx">02</span>
+            <div class="flow-body"><strong>Select features</strong><p>Keep the measurements that actually carry signal and drop the ones that add noise or leak the target.</p></div>
+          </li>
+          <li class="flow-step">
+            <span class="flow-idx">03</span>
+            <div class="flow-body"><strong>Train</strong><p>Fit a classification model on the prepared features.</p></div>
+          </li>
+          <li class="flow-step">
+            <span class="flow-idx">04</span>
+            <div class="flow-body"><strong>Evaluate</strong><p>Measure performance on held-out data rather than on the data the model was trained on.</p></div>
+          </li>
+          </ol>
+          </section>
+
+          <section class="proj-section">
+          <h2 class="proj-h2">Status</h2>
+          <p>This build is still in progress. The repository is not public yet, so there is nothing to link to — it will be added here when it is ready.</p>
+          </section>
+      </div>
+    </div>
+
+    <nav class="proj-pager" aria-label="Project navigation">
+        <a class="pager-link" href="work-code-review.html">
+          <span class="pager-dir">Previous project</span>
+          <span class="pager-title">Code Review Agent</span>
+        </a>
+        <a class="pager-link next" href="work-vyaparsathi.html">
+          <span class="pager-dir">Next project</span>
+          <span class="pager-title">VyaparSathi — Business OS</span>
+        </a>
+    </nav>
+  </div>
+
+</main>
+
+<footer class="profile-footer">
+  <div class="profile-container footer-inner">
+    <p>© 2026 Aakash Gupta. <span>Built with AI systems, product taste, and coffee.</span></p>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="work.html">Work</a>
+      <a href="index.html#toolkit">Toolkit</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js" defer></script>
+</body>
+</html>

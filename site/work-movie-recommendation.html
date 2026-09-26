@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f7f6f1">
+<title>Movie Recommendation System — Aakash Gupta | AI/ML Engineer</title>
+<meta name="description" content="A content-based movie recommendation system using TF-IDF and cosine similarity, served through a FastAPI backend.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="project.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="site-nav profile-container">
+    <a href="index.html" class="brand"><span class="brand-mark"><img src="assets/photo-passport.jpg" alt=""></span>Aakash Gupta</a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="work.html" class="nav-active">Work</a></li>
+      <li><a href="index.html#toolkit">Toolkit</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a class="book" href="mailto:aakashsahuu0188@gmail.com" target="_blank" rel="noopener">Let's talk <span class="arrow">↗</span></a>
+    </div>
+      <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
+      <span class="nav-toggle-bars" aria-hidden="true"><span></span><span></span><span></span></span>
+    </button>
+</nav>
+
+</header>
+
+<main class="profile-page">
+
+  <section class="project-hero grad-3">
+    <div class="profile-container hero-inner">
+      <span class="hero-label">Machine Learning</span>
+      <h1>Movie Recommendation System</h1>
+      <p class="hero-summary">Content-based recommendations that compare a film's metadata against the rest of the catalogue using TF-IDF vectors and cosine similarity.</p>
+      <div class="hero-meta">
+        <span class="badge built"><span class="pulse"></span>Built</span>
+      </div>
+      <div class="video-tags hero-tags">
+        <span class="video-tag">Scikit-learn</span>
+        <span class="video-tag">TF-IDF</span>
+        <span class="video-tag">FastAPI</span>
+      </div>
+      <div class="hero-actions">
+        <a class="hero-btn primary" href="https://codewithskyies-movie-recommendation-system-streamlit-app-nxrndo.streamlit.app/" target="_blank" rel="noopener">Open live demo <span class="arrow">↗</span></a>
+        <a class="hero-btn ghost" href="https://github.com/theaakashgupta" target="_blank" rel="noopener">View source <span class="arrow">↗</span></a>
+      </div>
+    </div>
+  </section>
+
+  <div class="profile-container">
+    <a class="back-link" href="work.html">← All work</a>
+
+    <div class="proj-layout">
+      <aside class="proj-side">
+        <section>
+          <p class="side-label">At a glance</p>
+          <div class="fact-list">
+            <div class="fact"><span class="fact-k">Status</span><span class="fact-v">Built</span></div>
+            <div class="fact"><span class="fact-k">Also known as</span><span class="fact-v">Content-based filtering with cosine similarity</span></div>
+          </div>
+        </section>
+        <section>
+          <p class="side-label">Stack</p>
+          <ul class="side-stack">
+            <li>Scikit-learn</li>
+            <li>TF-IDF</li>
+            <li>FastAPI</li>
+          </ul>        </section>
+        <section>
+          <p class="side-label">Links</p>
+          <div class="side-links">
+            <a class="action-link" href="https://codewithskyies-movie-recommendation-system-streamlit-app-nxrndo.streamlit.app/" target="_blank" rel="noopener">Open live demo ↗</a>
+            <a class="action-link" href="https://github.com/theaakashgupta" target="_blank" rel="noopener">Source code ↗</a>
+          </div>
+        </section>
+      </aside>
+
+      <div class="proj-body">
+                    <section class="proj-section">
+          <h2 class="proj-h2">Overview</h2>
+          <p>Recommendation systems are usually split into two families: collaborative filtering, which leans on what other people watched, and content-based filtering, which leans on what a film is actually made of.</p>
+          <p>This one is content-based. Each movie is described by its metadata — plot, genre, cast, themes — and that text is turned into a TF-IDF vector. Similarity between those vectors is what drives every recommendation.</p>
+          <p>The upside is that it works on day one. There is no cold-start problem, because it never needs other users' behaviour to make its first suggestion.</p>
+          </section>
+
+          <section class="proj-section">
+          <h2 class="proj-h2">How it works</h2>
+          <ol class="flow">
+          <li class="flow-step">
+            <span class="flow-idx">01</span>
+            <div class="flow-body"><strong>Describe</strong><p>Collect the text metadata for each movie — plot, genre, cast and keywords.</p></div>
+          </li>
+          <li class="flow-step">
+            <span class="flow-idx">02</span>
+            <div class="flow-body"><strong>Vectorise</strong><p>Build a TF-IDF matrix over that text, down-weighting common words so distinctive terms carry more signal.</p></div>
+          </li>
+          <li class="flow-step">
+            <span class="flow-idx">03</span>
+            <div class="flow-body"><strong>Compare</strong><p>Take the cosine similarity between a target film and every other film in the catalogue.</p></div>
+          </li>
+          <li class="flow-step">
+            <span class="flow-idx">04</span>
+            <div class="flow-body"><strong>Rank</strong><p>Return the highest-scoring matches, each with its similarity score attached.</p></div>
+          </li>
+          </ol>
+          </section>
+
+          <section class="proj-section">
+          <h2 class="proj-h2">Results</h2>
+          <p>Similarity scores from the running app show the model clustering films by content rather than by popularity alone:</p>
+          <ul class="bullets">
+          <li><strong>Interstellar</strong> — similarity <strong>0.94</strong></li>
+          <li><strong>Arrival</strong> — similarity <strong>0.87</strong></li>
+          <li><strong>Blade Runner 2049</strong> — similarity <strong>0.80</strong></li>
+          </ul>
+          </section>
+
+          <section class="proj-section">
+          <h2 class="proj-h2">What it does</h2>
+          <ul class="bullets">
+          <li><strong>Recommends from content</strong>, so it works before any user history exists.</li>
+          <li><strong>Ranks by cosine similarity</strong>, giving a transparent score for every suggestion.</li>
+          <li><strong>Explains itself</strong> — the score makes it obvious why two films were paired.</li>
+          <li><strong>FastAPI backend</strong> serving the model, with a Streamlit interface on top.</li>
+          </ul>
+          </section>
+
+          <section class="proj-section">
+          <h2 class="proj-h2">Tech stack</h2>
+          <ul class="bullets">
+          <li><strong>Scikit-learn</strong> — TF-IDF vectorisation and the similarity computation.</li>
+          <li><strong>TF-IDF</strong> — turns unstructured movie text into comparable numeric vectors.</li>
+          <li><strong>Cosine similarity</strong> — measures how close two films are regardless of text length.</li>
+          <li><strong>FastAPI</strong> — serves the model over an HTTP API.</li>
+          <li><strong>Streamlit</strong> — the app interface used by the live demo.</li>
+          </ul>
+          </section>
+      </div>
+    </div>
+
+    <nav class="proj-pager" aria-label="Project navigation">
+        <a class="pager-link" href="work-pdf-insights.html">
+          <span class="pager-dir">Previous project</span>
+          <span class="pager-title">PDF Insights Engine — RAG</span>
+        </a>
+        <a class="pager-link next" href="work-mental-health.html">
+          <span class="pager-dir">Next project</span>
+          <span class="pager-title">Mental Health Score Predictor</span>
+        </a>
+    </nav>
+  </div>
+
+</main>
+
+<footer class="profile-footer">
+  <div class="profile-container footer-inner">
+    <p>© 2026 Aakash Gupta. <span>Built with AI systems, product taste, and coffee.</span></p>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="work.html">Work</a>
+      <a href="index.html#toolkit">Toolkit</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js" defer></script>
+</body>
+</html>

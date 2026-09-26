@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f7f6f1">
+<title>AI-Powered Multi-Agent Research Intelligence — Aakash Gupta | AI/ML Engineer</title>
+<meta name="description" content="A multi-agent LangGraph system that searches the web with Tavily, extracts pages with BeautifulSoup, writes a structured report and scores it with an AI critic.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="project.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="site-nav profile-container">
+    <a href="index.html" class="brand"><span class="brand-mark"><img src="assets/photo-passport.jpg" alt=""></span>Aakash Gupta</a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="work.html" class="nav-active">Work</a></li>
+      <li><a href="index.html#toolkit">Toolkit</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a class="book" href="mailto:aakashsahuu0188@gmail.com" target="_blank" rel="noopener">Let's talk <span class="arrow">↗</span></a>
+    </div>
+      <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
+      <span class="nav-toggle-bars" aria-hidden="true"><span></span><span></span><span></span></span>
+    </button>
+</nav>
+
+</header>
+
+<main class="profile-page">
+
+  <section class="project-hero grad-1">
+    <div class="profile-container hero-inner">
+      <span class="hero-label">AI Research System</span>
+      <h1>AI-Powered Multi-Agent Research Intelligence</h1>
+      <p class="hero-summary">An agent pipeline that turns a plain-language topic into a researched report — search the live web, read the sources, write it up, then score the result.</p>
+      <div class="hero-meta">
+        <span class="badge built"><span class="pulse"></span>Built</span>
+      </div>
+      <div class="video-tags hero-tags">
+        <span class="video-tag">Python</span>
+        <span class="video-tag">LangChain</span>
+        <span class="video-tag">LangGraph</span>
+        <span class="video-tag">OpenAI</span>
+        <span class="video-tag">Tavily</span>
+        <span class="video-tag">BeautifulSoup</span>
+        <span class="video-tag">Streamlit</span>
+      </div>
+      <div class="hero-actions">
+        <a class="hero-btn primary" href="https://multi-agent-research-system-aqewssxctmpu5r45pgrxut.streamlit.app/" target="_blank" rel="noopener">Open live demo <span class="arrow">↗</span></a>
+        <a class="hero-btn ghost" href="https://github.com/theaakashgupta" target="_blank" rel="noopener">View source <span class="arrow">↗</span></a>
+      </div>
+    </div>
+  </section>
+
+  <div class="profile-container">
+    <a class="back-link" href="work.html">← All work</a>
+
+    <div class="proj-layout">
+      <aside class="proj-side">
+        <section>
+          <p class="side-label">At a glance</p>
+          <div class="fact-list">
+            <div class="fact"><span class="fact-k">Status</span><span class="fact-v">Built</span></div>
+            <div class="fact"><span class="fact-k">Also known as</span><span class="fact-v">Multi-Agent AI System for Automated Web Research and Report Generation</span></div>
+          </div>
+        </section>
+        <section>
+          <p class="side-label">Stack</p>
+          <ul class="side-stack">
+            <li>Python</li>
+            <li>LangChain</li>
+            <li>LangGraph</li>
+            <li>OpenAI</li>
+            <li>Tavily</li>
+            <li>BeautifulSoup</li>
+            <li>Streamlit</li>
+          </ul>        </section>
+        <section>
+          <p class="side-label">Links</p>
+          <div class="side-links">
+            <a class="action-link" href="https://multi-agent-research-system-aqewssxctmpu5r45pgrxut.streamlit.app/" target="_blank" rel="noopener">Open live demo ↗</a>
+            <a class="action-link" href="https://github.com/theaakashgupta" target="_blank" rel="noopener">Source code ↗</a>
+          </div>
+        </section>
+      </aside>
+
+      <div class="proj-body">
+                    <section class="proj-section">
+          <h2 class="proj-h2">Overview</h2>
+          <p>The internet almost always contains the answer to a research question. Getting it out still means searching for sources, reading each page, pulling the useful parts together and writing it up — a long chain of manual steps.</p>
+          <p>This project automates that chain. A team of specialised agents divides the work: one finds sources, one reads them, one writes, and one criticises the output. Each hands its result to the next through shared state, so the pipeline runs end to end from a single line of input.</p>
+          </section>
+
+          <section class="proj-section">
+          <h2 class="proj-h2">The problem</h2>
+          <ul class="bullets">
+          <li><strong>Research is slow by hand.</strong> Searching, reading, organising and summarising across many sources eats most of the time.</li>
+          <li><strong>Models answer from memory.</strong> Without a connection to external sources, a language model can return information that is simply out of date.</li>
+          <li><strong>Findings need structure.</strong> Raw excerpts from a dozen pages are not a report — they have to be organised before anyone can use them.</li>
+          <li><strong>Output needs checking.</strong> A generated report should be assessed before it is trusted, not assumed correct.</li>
+          </ul>
+          </section>
+
+          <section class="proj-section">
+          <h2 class="proj-h2">How it works</h2>
+          <ol class="flow">
+          <li class="flow-step">
+            <span class="flow-idx">01</span>
+            <div class="flow-body"><strong>Search Agent</strong><p>Takes the research topic in natural language and queries the Tavily API to find current, relevant sources.</p></div>
+          </li>
+          <li class="flow-step">
+            <span class="flow-idx">02</span>
+            <div class="flow-body"><strong>Reader Agent</strong><p>Fetches the selected URLs and strips each page down to readable text with BeautifulSoup.</p></div>
+          </li>
+          <li class="flow-step">
+            <span class="flow-idx">03</span>
+            <div class="flow-body"><strong>Workflow Manager</strong><p>Holds the shared state — topic, search results, scraped content — and controls the order every stage runs in.</p></div>
+          </li>
+          <li class="flow-step">
+            <span class="flow-idx">04</span>
+            <div class="flow-body"><strong>Writer Chain</strong><p>Feeds the collected evidence to an LLM and generates a structured research report.</p></div>
+          </li>
+          <li class="flow-step">
+            <span class="flow-idx">05</span>
+            <div class="flow-body"><strong>Critic Chain</strong><p>Reviews the finished report and returns a quality score along with specific improvement suggestions.</p></div>
+          </li>
+          </ol>
+          </section>
+
+          <section class="proj-section">
+          <h2 class="proj-h2">What it does</h2>
+          <ul class="bullets">
+          <li>Runs <strong>real-time web search</strong> so results reflect current sources rather than model memory.</li>
+          <li><strong>Extracts readable content</strong> from web pages instead of passing raw HTML to the model.</li>
+          <li><strong>Generates structured reports</strong> rather than loose summaries.</li>
+          <li><strong>Scores its own output</strong> with a dedicated critic stage, so quality is measured and not assumed.</li>
+          <li><strong>Keeps state between stages</strong>, so each agent builds on the last instead of starting over.</li>
+          </ul>
+          </section>
+
+          <section class="proj-section">
+          <h2 class="proj-h2">Tech stack</h2>
+          <ul class="bullets">
+          <li><strong>Python</strong> — core language for the whole pipeline.</li>
+          <li><strong>LangGraph</strong> — state-based workflow that sequences the agents and carries state between them.</li>
+          <li><strong>LangChain</strong> — prompt chains and LLM calls for the writer and critic stages.</li>
+          <li><strong>OpenAI</strong> — LLM calls for report generation and critique.</li>
+          <li><strong>Tavily API</strong> — web search for live source discovery.</li>
+          <li><strong>BeautifulSoup</strong> — HTML parsing and readable-text extraction.</li>
+          <li><strong>Streamlit</strong> — the web interface the demo runs on.</li>
+          </ul>
+          </section>
+      </div>
+    </div>
+
+    <nav class="proj-pager" aria-label="Project navigation">
+        <span></span>
+        <a class="pager-link next" href="work-pdf-insights.html">
+          <span class="pager-dir">Next project</span>
+          <span class="pager-title">PDF Insights Engine — RAG</span>
+        </a>
+    </nav>
+  </div>
+
+</main>
+
+<footer class="profile-footer">
+  <div class="profile-container footer-inner">
+    <p>© 2026 Aakash Gupta. <span>Built with AI systems, product taste, and coffee.</span></p>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="work.html">Work</a>
+      <a href="index.html#toolkit">Toolkit</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js" defer></script>
+</body>
+</html>
