@@ -24,6 +24,7 @@ const mono = IBM_Plex_Mono({
 });
 
 export const metadata = {
+  metadataBase: new URL('https://aakash-portfolio-3-u48z.vercel.app/'),
   title: {
     default: 'Aakash Gupta | AI/ML Engineer',
     template: '%s — Aakash Gupta | AI/ML Engineer',
