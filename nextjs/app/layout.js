@@ -2,6 +2,7 @@ import { Fraunces, IBM_Plex_Mono, Inter } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import InlineScript from '@/components/InlineScript';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -53,12 +54,27 @@ export const viewport = {
   width: 'device-width',
   initialScale: 1,
   viewportFit: 'cover',
-  themeColor: '#f7f6f1',
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#f7f6f1' },
+    { media: '(prefers-color-scheme: dark)', color: '#141311' },
+  ],
 };
+
+// Runs while the head is parsed, so the stored theme is applied before the
+// first paint. Must stay in sync with resolveTheme() in components/ThemeToggle.js.
+const THEME_SCRIPT = `(function(){try{var t=localStorage.getItem("theme");if(t!=="light"&&t!=="dark"){t=window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}document.documentElement.setAttribute("data-theme",t)}catch(e){}})()`;
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${inter.variable} ${fraunces.variable} ${mono.variable}`}>
+    <html
+      lang="en"
+      data-theme="light"
+      suppressHydrationWarning
+      className={`${inter.variable} ${fraunces.variable} ${mono.variable}`}
+    >
+      <head>
+        <InlineScript html={THEME_SCRIPT} />
+      </head>
       <body>
         <Header />
         {children}

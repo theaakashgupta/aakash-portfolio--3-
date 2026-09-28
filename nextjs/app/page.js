@@ -4,7 +4,7 @@ import GitHubPanel from '@/components/GitHubPanel';
 import ContactForm from '@/components/ContactForm';
 import Lightbox from '@/components/Lightbox';
 import EmailCopyButton from '@/components/EmailCopyButton';
-import { PinIcon, GitHubIcon, XIcon, LinkedInIcon, LinkIcon } from '@/components/Icons';
+import { PinIcon, GitHubIcon, XIcon, LinkedInIcon } from '@/components/Icons';
 
 const TOOLS = [
   ['python.svg', 'Python'],
@@ -107,15 +107,6 @@ export default function Home() {
               >
                 <LinkedInIcon />
                 <span className="social-label">LinkedIn</span>
-              </a>
-              <a
-                className="social-option"
-                href="http://aaravkashyapsingh.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <LinkIcon />
-                <span className="social-label">Website</span>
               </a>
               <EmailCopyButton />
             </nav>

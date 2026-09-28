@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
+import ThemeToggle from '@/components/ThemeToggle';
 
 const LINKS = [
   { href: '/', label: 'Home', key: 'home' },
@@ -83,6 +84,7 @@ export default function Header() {
         </ul>
 
         <div className="nav-actions">
+          <ThemeToggle />
           <a
             className="book"
             href="mailto:aakashsahuu0188@gmail.com"

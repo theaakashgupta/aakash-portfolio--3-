@@ -194,11 +194,9 @@ export default function GitHubPanel() {
 
       <div className="gh-legend">
         Less
-        <span className="gh-cell" style={{ background: '#efead9' }} />
-        <span className="gh-cell" style={{ background: '#e2d4a8' }} />
-        <span className="gh-cell" style={{ background: '#c4b06c' }} />
-        <span className="gh-cell" style={{ background: '#9a8038' }} />
-        <span className="gh-cell" style={{ background: '#6f5720' }} />
+        {COLORS.map((c) => (
+          <span className="gh-cell" key={c} style={{ background: c }} />
+        ))}
         More
       </div>
 
